@@ -5,9 +5,13 @@ import java.time.LocalDateTime
 
 @Entity(name = "ORDER_ITEM")
 class OrderItemJpaEntity(
-    @Id
+
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "PRIMARY_ID")
+    val primaryId: Long? = null,
+
     @Column(name = "ORDER_ITEM_ID")
-    val orderItemId: Long? = null,
+    val orderItemId: Long,
 
     @Column(name = "ORDER_ID")
     val orderId: Long,
@@ -26,6 +30,9 @@ class OrderItemJpaEntity(
 
     @Column(name = "ITEM_TOTAL_PRICE")
     val itemTotalPrice: Int,
+
+    @Column(name = "DEL_STATUS")
+    val delStatus: Boolean,
 
     @Column(name = "REG_DATE")
     val regDate: LocalDateTime,

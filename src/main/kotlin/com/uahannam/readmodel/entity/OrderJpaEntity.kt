@@ -6,9 +6,13 @@ import java.time.LocalDateTime
 
 @Entity(name = "ORDERS")
 class OrderJpaEntity(
-    @Id
+
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "PRIMARY_ID")
+    val primaryId: Long? = null,
+
     @Column(name = "ORDER_ID")
-    val orderId: Long? = null,
+    val orderId: Long,
 
     @Column(name = "MEMBER_ID")
     val memberId: Long,
@@ -25,6 +29,9 @@ class OrderJpaEntity(
     @Column(name = "ORDER_STATUS")
     @Enumerated(EnumType.STRING)
     var orderStatus: OrderStatus,
+
+    @Column(name = "DEL_STATUS")
+    val delStatus: Boolean,
 
     @Column(name = "REG_DATE")
     val regDate: LocalDateTime,

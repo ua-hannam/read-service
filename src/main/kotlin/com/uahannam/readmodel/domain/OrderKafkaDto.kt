@@ -18,6 +18,7 @@ data class OrderKafkaDto(
             storeId = order.storeId,
             totalPrice = order.totalPrice,
             orderStatus = order.orderStatus,
+            delStatus = order.delStatus,
             regDate = order.regDate,
             modDate = order.modDate
         )
@@ -32,6 +33,7 @@ data class OrderKafkaDto(
                 itemName = orderItem.itemName,
                 itemQuantity = orderItem.itemQuantity,
                 itemTotalPrice = orderItem.itemTotalPrice,
+                delStatus = orderItem.delStatus,
                 regDate = orderItem.regDate,
                 modDate = orderItem.modDate
             )
@@ -52,6 +54,7 @@ data class Order(
     val storeId: Long,
     val totalPrice: Int,
     val orderStatus: OrderStatus,
+    val delStatus: Boolean,
     val regDate: LocalDateTime,
     val modDate: LocalDateTime
 )
@@ -64,6 +67,7 @@ data class OrderItem(
     val itemName: String,
     val itemQuantity: Int,
     val itemTotalPrice: Int,
+    val delStatus: Boolean,
     val regDate: LocalDateTime,
     val modDate: LocalDateTime
 )
