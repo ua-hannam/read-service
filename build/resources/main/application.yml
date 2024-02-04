@@ -16,3 +16,6 @@ kafka:
 
 save-order-service:
   group-id: save-order-data
+
+modify-order-status:
+  group-id: modify-order-status

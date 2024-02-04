@@ -1,6 +1,5 @@
 package com.uahannam.readmodel.entity
 
-import com.uahannam.readmodel.domain.OrderStatus
 import jakarta.persistence.*
 import java.time.LocalDateTime
 

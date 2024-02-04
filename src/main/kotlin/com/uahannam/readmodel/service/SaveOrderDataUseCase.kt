@@ -1,8 +1,8 @@
 package com.uahannam.readmodel.service
 
-import com.uahannam.readmodel.domain.OrderKafkaDto
+import com.uahannam.readmodel.dto.OrderKafkaDto
 
 interface SaveOrderDataUseCase {
 
-    fun saveOrderData(order: OrderKafkaDto)
+    fun saveOrderData(saveEventOrder: OrderKafkaDto)
 }

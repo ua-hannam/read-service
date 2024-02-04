@@ -1,4 +1,4 @@
-package com.uahannam.readmodel.domain
+package com.uahannam.readmodel.entity
 
 enum class OrderStatus(
     val description: String
