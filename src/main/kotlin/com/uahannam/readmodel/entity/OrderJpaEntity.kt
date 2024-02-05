@@ -1,15 +1,13 @@
 package com.uahannam.readmodel.entity
 
 import jakarta.persistence.*
+import org.springframework.data.domain.Persistable
 import java.time.LocalDateTime
 
 @Entity(name = "ORDERS")
-class OrderJpaEntity(
+data class OrderJpaEntity(
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "PRIMARY_ID")
-    val primaryId: Long? = null,
-
+    @Id
     @Column(name = "ORDER_ID")
     val orderId: Long,
 
@@ -32,14 +30,18 @@ class OrderJpaEntity(
     @Column(name = "DEL_STATUS")
     val delStatus: Boolean,
 
-    @Column(name = "REG_DATE")
+    @Column(name = "ORDER_REG_DATE")
     val regDate: LocalDateTime,
 
-    @Column(name = "MOD_DATE")
+    @Column(name = "ORDER_MOD_DATE")
     val modDate: LocalDateTime
 
-    ) {
+    ) : ReadModelBaseEntity(), Persistable<Long> {
     fun updateOrderStatus(orderStatus: OrderStatus) {
         this.orderStatus = orderStatus
     }
+
+    override fun getId() = orderId
+
+    override fun isNew() = readModelRegDate == null
 }

@@ -1,6 +1,7 @@
 package com.uahannam.readmodel.repository
 
 import com.uahannam.readmodel.entity.OrderJpaEntity
+import com.uahannam.readmodel.entity.OrderJpaEntity2
 import com.uahannam.readmodel.entity.OrderStatus
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Modifying

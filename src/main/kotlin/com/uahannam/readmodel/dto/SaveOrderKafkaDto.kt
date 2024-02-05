@@ -1,9 +1,6 @@
 package com.uahannam.readmodel.dto
 
-import com.uahannam.readmodel.entity.OrderEventJpaEntity
-import com.uahannam.readmodel.entity.OrderItemJpaEntity
-import com.uahannam.readmodel.entity.OrderJpaEntity
-import com.uahannam.readmodel.entity.OrderStatus
+import com.uahannam.readmodel.entity.*
 import java.time.LocalDateTime
 
 data class OrderKafkaDto(

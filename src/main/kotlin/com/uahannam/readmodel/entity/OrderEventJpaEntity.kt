@@ -13,4 +13,4 @@ class OrderEventJpaEntity(
 
     @Column(name = "ORDER_ID")
     val orderId: Long,
- ) : DateBaseEntity()
+ ) : ReadModelBaseEntity()

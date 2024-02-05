@@ -10,13 +10,14 @@ import java.time.LocalDateTime
 
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener::class)
-abstract class DateBaseEntity(
+abstract class ReadModelBaseEntity(
 
     @CreatedDate
     @Column(name = "REG_DATE")
-    var regDate: LocalDateTime? = null,
+    var readModelRegDate: LocalDateTime? = null,
 
     @LastModifiedDate
     @Column(name = "MOD_DATE")
-    var modDate: LocalDateTime? = null
+    var readModelModDate: LocalDateTime? = null
 )
+
