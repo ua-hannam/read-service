@@ -13,8 +13,6 @@ class OrderServiceDataListener(
 
     @KafkaListener(topics = ["save-order-data"], groupId = "save-order-data", containerFactory = "saveOrderServiceKafkaListenerContainerFactory")
     fun listenOrderData(@Payload saveEventOrder: OrderKafkaDto) {
-        println("KAFKA 요청 도착 ============================================>")
-        println("orderKafkaDTO : $saveEventOrder")
         saveOrderDataUseCase.saveOrderData(saveEventOrder)
     }
 }

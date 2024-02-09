@@ -1,4 +1,4 @@
-package com.uahannam.readmodel.config
+package com.uahannam.readmodel.common.config
 
 import com.uahannam.readmodel.dto.ModifyOrderStatusKafkaDto
 import com.uahannam.readmodel.dto.OrderKafkaDto

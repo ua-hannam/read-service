@@ -14,8 +14,6 @@ class ModifyOrderStatusListener(
 
     @KafkaListener(topics = ["modify-order-status"], groupId = "modify-order-status", containerFactory = "modifyOrderStatusKafkaListenerContainerFactory")
     fun listenOrderData(@Payload modifyOrderStatusKafkaDto: ModifyOrderStatusKafkaDto) {
-        println("KAFKA 요청 도착 ============================================>")
-        println("modifyOrderStatusKafkaDTO : $modifyOrderStatusKafkaDto")
         modifyOrderStatusUseCase.modifyOrderStatus(modifyOrderStatusKafkaDto)
     }
 }
